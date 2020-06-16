@@ -1,18 +1,32 @@
 {
-  "name": "app",
+  "name": "apieceofserver",
   "version": "1.0.0",
-  "description": "fullstack",
-  "main": "app.js",
+  "description": "just for Json generator",
+  "main": "./src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node app.js"
+    "start": "node ./bin/dev",
+    "build": "mkdir dist && babel src -s -d dist"
   },
-  "author": "haku",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SnowGojira/aPieceofServer.git"
+  },
+  "author": "Haku Hal",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SnowGojira/aPieceofServer/issues"
+  },
+  "homepage": "https://github.com/SnowGojira/aPieceofServer#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "lodash": "^4.17.11"
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0"
   }
 }
