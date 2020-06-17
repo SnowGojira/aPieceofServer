@@ -1,6 +1,7 @@
 import express from "express";
 import { json, urlencoded } from "body-parser";
 import cors from "cors";
+import joi from "joi";
 
 const contentJsonObj = {
   works: [
@@ -145,6 +146,13 @@ const contentJsonObj = {
   },
 };
 
+const testPostData = [
+  {
+    id: 1,
+    name: "Alli",
+  },
+];
+
 const app = express();
 
 //middleware
@@ -159,7 +167,6 @@ app.get("/api/works", (req, res) => {
 });
 
 app.get("/api/works/:id", (req, res) => {
-  //找到array里面id一直的对象
   const result = contentJsonObj.works.find(
     (item) => item.id == parseInt(req.params.id)
   );
@@ -171,6 +178,26 @@ app.get("/api/works/:id", (req, res) => {
   }
 });
 
+//定义post request
+app.post("/api/testpost", (req, res) => {
+  const schema = {
+    name: joi.string().min(3).required(),
+  };
+
+  const result = joi.validate(req.body, schema);
+  console.log(result);
+
+  if (result.error) {
+    //bad request
+    res.status(400).send(result.error.details[0].message);
+  }
+  const testie = {
+    id: testPostData.length + 1,
+    name: req.body.name,
+  };
+  testPostData.push(testie);
+  res.send(testie);
+});
 //添加一个自己设置的header，status的代码
 // app.get("/demo", (req, res) => {
 //   res.set("X-full-stack", "4life");
