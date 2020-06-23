@@ -146,17 +146,6 @@ const contentJsonObj = {
   },
 };
 
-const testPostData = [
-  {
-    id: 1,
-    name: "Alli",
-  },
-  {
-    id: 2,
-    name: "hale",
-  },
-];
-
 const app = express();
 
 //middleware
@@ -182,72 +171,8 @@ app.get("/api/works/:id", (req, res) => {
   }
 });
 
-//定义post request
-app.post("/api/testpost", (req, res) => {
-  const { error } = validataTestData(req.body);
-  if (error) {
-    //bad request
-    res.status(400).send(error.details[0].message);
-    return;
-  }
-
-  const testie = {
-    id: testPostData.length + 1,
-    name: req.body.name,
-  };
-  testPostData.push(testie);
-  res.send(testie);
-});
-//添加一个自己设置的header，status的代码
-// app.get("/demo", (req, res) => {
-//   res.set("X-full-stack", "4life");
-//   res.status(418);
-//   res.send("I prefer coffee");
-// });
-app.put("/api/testpost/:id", (req, res) => {
-  //1.验证id在不在，不在返回404
-  const postData = testPostData.find(
-    (item) => item.id == parseInt(req.params.id)
-  );
-
-  if (!postData) {
-    res.status(404).send("the id your request is not valid");
-  }
-  //2.验证更新的信息和不合规，不合规返回400
-  const { error } = validataTestData(req.body);
-  if (error) {
-    //bad request
-    res.status(400).send(error.details[0].message);
-    return;
-  }
-  //3.都没问题,更新信息，返回结果
-  postData.name = req.body.name;
-  res.send(postData);
-});
-
-const validataTestData = (data) => {
-  const schema = {
-    name: joi.string().min(3).required(),
-  };
-
-  return joi.validate(data, schema);
-};
-
-app.delete("/api/testpost/:id", (req, res) => {
-  //1.验证id在不在，不在返回404
-  const postData = testPostData.find(
-    (item) => item.id == parseInt(req.params.id)
-  );
-
-  if (!postData) {
-    res.status(404).send("the id your request is not valid");
-  }
-
-  //2.删除掉该元素
-  const index = testPostData.indexOf(postData);
-  testPostData.splice(index, 1);
-
-  res.send(postData);
+app.get("/api/intro", (req, res) => {
+  res.send(contentJsonObj.intro);
 });
 
 app.listen(port, () =>
