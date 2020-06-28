@@ -1,7 +1,6 @@
 import express from "express";
-import { json, urlencoded } from "body-parser";
+import { json } from "body-parser";
 import cors from "cors";
-import joi from "joi";
 
 const contentJsonObj = {
   works: [
@@ -151,7 +150,6 @@ const app = express();
 //middleware
 app.use(cors()); //跨域
 app.use(json()); //json
-app.use(urlencoded({ extended: true })); //url+params的粘连
 
 const port = process.env.PORT || 3000;
 //定义get request
@@ -174,7 +172,13 @@ app.get("/api/works/:id", (req, res) => {
 app.get("/api/intro", (req, res) => {
   res.send(contentJsonObj.intro);
 });
-
+//处理vue单页的route
+if (process.env.NODE_ENV === "production") {
+  //Static folder
+  app.use(express.static(__dirname + "/public"));
+  //handle Single page app
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
+}
 app.listen(port, () =>
   console.log(`Example app listening at http://localhost:${port}`)
 );
