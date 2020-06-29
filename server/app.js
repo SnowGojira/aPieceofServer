@@ -20,7 +20,7 @@ const contentJsonObj = {
       type: "phone",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/caixin_hb.jpg",
-      link: "http://.../cases/caixin/",
+      link: "http://134.175.237.221/cases/caixin/",
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const contentJsonObj = {
       type: "phone",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/caixin_fz.jpg",
-      link: "http://www.hakugaki.xyz/cases/founder-h5/",
+      link: "http://134.175.237.221/cases/founder-h5/",
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ const contentJsonObj = {
       type: "phone",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/crosslab_txl.jpg",
-      link: "http://.../cases/txl/",
+      link: "http://134.175.237.221/cases/txl/",
     },
     {
       id: 5,
@@ -47,7 +47,7 @@ const contentJsonObj = {
       type: "phone",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/crosslab_sw.jpg",
-      link: "http://.../cases/sw/",
+      link: "http://134.175.237.221/cases/sw/",
     },
     {
       id: 6,
@@ -56,7 +56,7 @@ const contentJsonObj = {
       type: "phone",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/lab_3d.jpg",
-      link: "http://.../cases/crash-bean/",
+      link: "http://134.175.237.221/cases/crash-bean/",
     },
     {
       id: 7,
@@ -65,7 +65,7 @@ const contentJsonObj = {
       type: "all",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/lab_music.jpg",
-      link: "http://.../cases/music/",
+      link: "http://134.175.237.221/cases/music/",
     },
     {
       id: 8,
@@ -74,7 +74,7 @@ const contentJsonObj = {
       type: "all",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/lab_vr.jpg",
-      link: "http://.../cases/vr/video.html",
+      link: "http://134.175.237.221/cases/vr/video.html",
     },
     {
       id: 9,
@@ -92,7 +92,7 @@ const contentJsonObj = {
       type: "phone",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/netease_ym.jpg",
-      link: "http://.../cases/lightening/",
+      link: "http://134.175.237.221/cases/lightening/",
     },
     {
       id: 11,
@@ -110,7 +110,7 @@ const contentJsonObj = {
       type: "all",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/web_oa.jpg",
-      link: "http://.../cases/original-album/",
+      link: "http://134.175.237.221/cases/original-album/",
     },
     {
       id: 13,
@@ -119,7 +119,7 @@ const contentJsonObj = {
       type: "phone",
       thumbnail:
         "https://haku-1252507164.cos.ap-nanjing.myqcloud.com/lab_ob.jpg",
-      link: "http://.../cases/ocd/",
+      link: "http://134.175.237.221/cases/ocd/",
     },
     {
       id: 14,
