@@ -125,7 +125,7 @@ app.use((0, _cors["default"])()); //跨域
 
 app.use((0, _bodyParser.json)()); //json
 
-var port = process.env.PORT || 3000; //定义get request
+var port = process.env.PORT || 3800; //定义get request
 
 app.get("/api/works", function (req, res) {
   res.send(contentJsonObj.works);
