@@ -125,7 +125,7 @@ app.use((0, _cors["default"])()); //跨域
 
 app.use((0, _bodyParser.json)()); //json
 
-var port = process.env.PORT || 3800; //定义get request
+var port = process.env.PORT || 3000; //定义get request
 
 app.get("/api/works", function (req, res) {
   res.send(contentJsonObj.works);
@@ -143,17 +143,7 @@ app.get("/api/works/:id", function (req, res) {
 });
 app.get("/api/intro", function (req, res) {
   res.send(contentJsonObj.intro);
-}); //处理vue单页的route
-
-if (process.env.NODE_ENV === "production") {
-  //Static folder
-  app.use(_express["default"]["static"](__dirname + "/public")); //handle Single page app
-
-  app.get(/.*/, function (req, res) {
-    return res.sendFile(__dirname + "/public/index.html");
-  });
-}
-
+});
 app.listen(port, function () {
   return console.log("Example app listening at http://localhost:".concat(port));
 });
