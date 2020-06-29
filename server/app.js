@@ -151,7 +151,7 @@ const app = express();
 app.use(cors()); //跨域
 app.use(json()); //json
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3800;
 //定义get request
 app.get("/api/works", (req, res) => {
   res.send(contentJsonObj.works);
